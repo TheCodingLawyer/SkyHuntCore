@@ -1,0 +1,73 @@
+name: SkyHuntCore
+version: ${project.version}
+main: org.skyhunt.SkyHuntCorePlugin
+description: Skyblock headhunting progression with missions, heads, and levels
+api-version: 1.21
+
+authors:
+  - SkyHunt Team
+
+softdepend:
+  - Vault
+  - WorldEdit
+  - FastAsyncWorldEdit
+
+commands:
+  island:
+    description: Main island command
+    usage: /island <create|home|missions|info|heads>
+    permission: skyhunt.island
+    aliases:
+      - is
+  levelup:
+    description: Level up your island when missions are complete
+    usage: /levelup
+    permission: skyhunt.island.levelup
+    aliases:
+      - rankup
+  skyhunt:
+    description: Admin command for SkyHuntCore
+    usage: /skyhunt <reload|setlevel|resetmissions|unlockhead|debug>
+    permission: skyhunt.admin
+
+permissions:
+  skyhunt.island:
+    description: Access to basic island commands
+    default: true
+  skyhunt.island.create:
+    description: Create a new island
+    default: true
+  skyhunt.island.missions:
+    description: View missions
+    default: true
+  skyhunt.island.levelup:
+    description: Level up island
+    default: true
+  skyhunt.island.info:
+    description: View island info
+    default: true
+  skyhunt.island.heads:
+    description: View unlocked heads
+    default: true
+  skyhunt.heads.sell:
+    description: Sell unlocked heads
+    default: true
+  
+  skyhunt.admin:
+    description: All admin permissions
+    default: op
+  skyhunt.admin.reload:
+    description: Reload plugin configuration
+    default: op
+  skyhunt.admin.setlevel:
+    description: Set player island level
+    default: op
+  skyhunt.admin.resetmissions:
+    description: Reset mission progress
+    default: op
+  skyhunt.admin.unlockhead:
+    description: Unlock head for player
+    default: op
+  skyhunt.admin.debug:
+    description: View debug info
+    default: op
